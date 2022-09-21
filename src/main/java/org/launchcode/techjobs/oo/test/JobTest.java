@@ -56,4 +56,14 @@ public class JobTest {
 
         assertFalse(testJob3.equals(testJob4));
     }
+
+    @Test
+    public void testToStringStartsAndEndsWithNewLine() {
+        Job testJob3 = new Job("Product Tester", new Employer("Google"), new Location("Mountains"), new PositionType("Analyst"), new CoreCompetency("Ethics"));
+        int lastIndex = (testJob3.toString().length() -1);
+
+        assertEquals('\n', (testJob3.toString().charAt(0)));
+        assertEquals('\n', (testJob3.toString().charAt(lastIndex)));
+//        assertEquals(testJob3.toString(),"LaunchCode");
+    }
 }
