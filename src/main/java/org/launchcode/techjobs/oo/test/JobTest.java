@@ -60,10 +60,39 @@ public class JobTest {
     @Test
     public void testToStringStartsAndEndsWithNewLine() {
         Job testJob3 = new Job("Product Tester", new Employer("Google"), new Location("Mountains"), new PositionType("Analyst"), new CoreCompetency("Ethics"));
-        int lastIndex = (testJob3.toString().length() -1);
+        int lastIndex = (testJob3.toString().length() - 1);
 
         assertEquals('\n', (testJob3.toString().charAt(0)));
         assertEquals('\n', (testJob3.toString().charAt(lastIndex)));
 //        assertEquals(testJob3.toString(),"LaunchCode");
     }
+
+    @Test
+    public void testToStringContainsCorrectLabelsAndData() {
+        Job testJob3 = new Job("Product Tester",
+            new Employer("Google"),
+            new Location("Mountains"),
+            new PositionType("Analyst"),
+            new CoreCompetency("Ethics"));
+
+        String [] lines = testJob3.toString().trim().split("\n");
+
+        System.out.println(testJob3.toString());
+
+        assertTrue(lines[0].startsWith("ID: "));
+        assertTrue(lines[1].startsWith("Name: "));
+        assertTrue(lines[2].startsWith("Employer: "));
+        assertTrue(lines[3].startsWith("Location: "));
+        assertTrue(lines[4].startsWith("Position Type: "));
+        assertTrue(lines[5].startsWith("Core Competency: "));
+
+        assertTrue(lines[0].endsWith(Integer.toString(testJob3.getId())));
+        assertTrue(lines[1].endsWith(testJob3.getName()));
+        assertTrue(lines[2].endsWith(testJob3.getEmployer().toString()));
+        assertTrue(lines[3].endsWith(testJob3.getLocation().toString()));
+        assertTrue(lines[4].endsWith(testJob3.getPositionType().toString()));
+        assertTrue(lines[5].endsWith(testJob3.getCoreCompetency().toString()));
+
+
+}
 }
