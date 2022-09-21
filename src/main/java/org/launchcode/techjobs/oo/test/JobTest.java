@@ -20,6 +20,7 @@ public class JobTest {
         Job emptyJob1 = new Job();
         Job emptyJob2 = new Job();
     }
+
     @Test
     public void testSettingJobId() {
         Job emptyJob1 = new Job();
@@ -33,7 +34,7 @@ public class JobTest {
         Job testJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
         assertTrue(testJob instanceof Job);
-        assertEquals(testJob.getName(),"Product tester");
+        assertEquals(testJob.getName(), "Product tester");
 
         assertTrue(testJob.getEmployer() instanceof Employer);
         assertEquals(testJob.getEmployer().getValue(), "ACME");
@@ -48,5 +49,11 @@ public class JobTest {
         assertEquals(testJob.getCoreCompetency().getValue(), "Persistence");
     }
 
+    @Test
+    public void testJobsForEquality() {
+        Job testJob3 = new Job("Product Tester", new Employer("Google"), new Location("Mountains"), new PositionType("Analyst"), new CoreCompetency("Ethics"));
+        Job testJob4 = new Job("Product Tester", new Employer("Google"), new Location("Mountains"), new PositionType("Analyst"), new CoreCompetency("Ethics"));
 
+        assertFalse(testJob3.equals(testJob4));
+    }
 }
