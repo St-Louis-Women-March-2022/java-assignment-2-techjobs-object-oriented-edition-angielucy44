@@ -43,13 +43,35 @@ public class Job {
 
     @Override
     public String toString() {
+       String blankName = "Data Not Available";
+       String blankEmployer = "Data Not Available";
+       String blankLocation = "Data Not Available";
+       String blankPositionType = "Data Not Available";
+       String blankCoreCompetency = "Data Not Available";
+
+        if(name != null && !name.equals("")) {
+             blankName = name;
+        }
+        if(employer.getValue() != null && !employer.getValue().equals("")) {
+            blankEmployer = employer.getValue();
+        }
+        if(location.getValue() != null && !location.getValue().equals("")) {
+            blankLocation = location.getValue();
+        }
+        if(positionType.getValue() != null && !positionType.getValue().equals("")) {
+           blankPositionType = positionType.getValue();
+        }
+        if(coreCompetency.getValue() != null && !coreCompetency.getValue().equals("")) {
+            blankCoreCompetency = coreCompetency.getValue();
+        }
+
         return  '\n' +
                 "ID: " + id + '\n' +
-                "Name: " + name + '\n' +
-                "Employer: " + employer + '\n' +
-                "Location: " + location + '\n' +
-                "Position Type: " + positionType + '\n' +
-                "Core Competency: " + coreCompetency +
+                "Name: " + blankName + '\n' +
+                "Employer: " + blankEmployer + '\n' +
+                "Location: " + blankLocation + '\n' +
+                "Position Type: " + blankPositionType + '\n' +
+                "Core Competency: " + blankCoreCompetency +
                 '\n';
     }
 

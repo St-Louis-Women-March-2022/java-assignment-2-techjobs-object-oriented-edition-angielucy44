@@ -70,12 +70,12 @@ public class JobTest {
     @Test
     public void testToStringContainsCorrectLabelsAndData() {
         Job testJob3 = new Job("Product Tester",
-            new Employer("Google"),
-            new Location("Mountains"),
-            new PositionType("Analyst"),
-            new CoreCompetency("Ethics"));
+                new Employer("Google"),
+                new Location("Mountains"),
+                new PositionType("Analyst"),
+                new CoreCompetency("Ethics"));
 
-        String [] lines = testJob3.toString().trim().split("\n");
+        String[] lines = testJob3.toString().trim().split("\n");
 
         System.out.println(testJob3.toString());
 
@@ -92,7 +92,19 @@ public class JobTest {
         assertTrue(lines[3].endsWith(testJob3.getLocation().toString()));
         assertTrue(lines[4].endsWith(testJob3.getPositionType().toString()));
         assertTrue(lines[5].endsWith(testJob3.getCoreCompetency().toString()));
+    }
+
+    @Test
+    public void testToStringHandlesEmptyField() {
+        Job testJob3 = new Job("Product Tester",
+                new Employer(""),
+                new Location("Mountains"),
+                new PositionType("Analyst"),
+                new CoreCompetency(""));
+
+        assertEquals("\nID: " + testJob3.getId() + "\nName: Product Tester\nEmployer: Data Not Available\nLocation: Mountains\nPosition Type: Analyst\nCore Competency: Data Not Available\n", testJob3.toString());
 
 
-}
+
+    }
 }
