@@ -43,11 +43,11 @@ public class Job {
 
     @Override
     public String toString() {
-       String blankName = "Data Not Available";
-       String blankEmployer = "Data Not Available";
-       String blankLocation = "Data Not Available";
-       String blankPositionType = "Data Not Available";
-       String blankCoreCompetency = "Data Not Available";
+       String blankName = "Data not available";
+       String blankEmployer = "Data not available";
+       String blankLocation = "Data not available";
+       String blankPositionType = "Data not available";
+       String blankCoreCompetency = "Data not available";
 
         if(name != null && !name.equals("")) {
              blankName = name;
@@ -64,7 +64,6 @@ public class Job {
         if(coreCompetency.getValue() != null && !coreCompetency.getValue().equals("")) {
             blankCoreCompetency = coreCompetency.getValue();
         }
-
         return  '\n' +
                 "ID: " + id + '\n' +
                 "Name: " + blankName + '\n' +

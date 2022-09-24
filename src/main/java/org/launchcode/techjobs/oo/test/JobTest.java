@@ -102,7 +102,7 @@ public class JobTest {
                 new PositionType("Analyst"),
                 new CoreCompetency(""));
 
-        assertEquals("\nID: " + testJob3.getId() + "\nName: Product Tester\nEmployer: Data Not Available\nLocation: Mountains\nPosition Type: Analyst\nCore Competency: Data Not Available\n", testJob3.toString());
+        assertEquals("\nID: " + testJob3.getId() + "\nName: Product Tester\nEmployer: Data not available\nLocation: Mountains\nPosition Type: Analyst\nCore Competency: Data not available\n", testJob3.toString());
 
 
 
