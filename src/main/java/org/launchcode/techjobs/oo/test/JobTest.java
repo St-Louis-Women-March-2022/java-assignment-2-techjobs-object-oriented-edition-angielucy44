@@ -79,26 +79,38 @@ public class JobTest {
 
 //        System.out.println(testJob3.toString());
 
-        assertTrue(lines[0].startsWith("ID: "));
-        assertTrue(lines[1].startsWith("Name: "));
-        assertTrue(lines[2].startsWith("Employer: "));
-        assertTrue(lines[3].startsWith("Location: "));
-        assertTrue(lines[4].startsWith("Position Type: "));
-        assertTrue(lines[5].startsWith("Core Competency: "));
+//        assertEquals("ID:10", lines[0].startsWith("ID: " + lines[0].endsWith(Integer.toString(testJob3.getId()))));
 
-        assertEquals(lines[0], Integer.toString(testJob3.getId()));
+//        assertTrue(lines[0].startsWith("ID: "));
+//        assertTrue(lines[1].startsWith("Name: "));
+//        assertTrue(lines[2].startsWith("Employer: "));
+//        assertTrue(lines[3].startsWith("Location: "));
+//        assertTrue(lines[4].startsWith("Position Type: "));
+//        assertTrue(lines[5].startsWith("Core Competency: "));
+
+        String testToString = testJob3.toString();
+        int id = testJob3.getId();
+        assertEquals(testToString, "\nID: "+ id +
+                "\nName: Product Tester" +
+                "\nEmployer: Google" +
+                "\nLocation: Mountains" +
+                "\nPosition Type: Analyst" +
+                "\nCore Competency: Ethics\n");
+    }
+
+//    assertEquals(lines[0], Integer.toString(testJob3.getId()));
 //        assertTrue(lines[0].endsWith(Integer.toString(testJob3.getId())));
 //        assertTrue(lines[1].endsWith(testJob3.getName()));
-        assertEquals(lines[1], testJob3.getName());
+//        assertEquals(lines[1], testJob3.getName());
 //        assertTrue(lines[2].endsWith(testJob3.getEmployer().toString()));
-        assertEquals(lines[2],testJob3.getEmployer().toString());
+//        assertEquals(lines[2],testJob3.getEmployer().toString());
 //        assertTrue(lines[3].endsWith(testJob3.getLocation().toString()));
-        assertEquals(lines[3], testJob3.getLocation().toString());
+//        assertEquals(lines[3], testJob3.getLocation().toString());
 //        assertTrue(lines[4].endsWith(testJob3.getPositionType().toString()));
-        assertEquals(lines[4], testJob3.getPositionType().toString());
+//        assertEquals(lines[4], testJob3.getPositionType().toString());
 //        assertTrue(lines[5].endsWith(testJob3.getCoreCompetency().toString()));
-        assertEquals(lines[5], testJob3.getCoreCompetency().toString());
-    }
+//        assertEquals(lines[5], testJob3.getCoreCompetency().toString());
+
 
     @Test
     public void testToStringHandlesEmptyField() {
